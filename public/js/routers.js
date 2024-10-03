@@ -17,9 +17,9 @@ function goCategory(hash){
   }
 }
 function goIdProduct(hash){
-  window.location.href = `${location.origin}/public/html/product.html#${hash}`
+  window.location.href = `${location.origin}./product.html#${hash}`
 }
 
 function windowOpen(file,hash){
-  window.location.href = `${location.origin}/public/html/${file}.html#${hash}`
+  window.location.href = `${location.origin}./${file}.html#${hash}`
 }

@@ -82,7 +82,7 @@ class Products{
               s/. <span>${element.newPrice}</span>
             </p>
             <div class="add-product_cart">
-              <img src="/public/img/svg/add.svg">
+              <img src="../img/svg/add.svg">
             </div>
           </div>
         `
