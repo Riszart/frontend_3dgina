@@ -1,0 +1,176 @@
+.main-product {
+  padding-top: 30px;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  .content-product{
+    .product{
+      width: 90vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      .title-name{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .weight{
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+      .product-image{
+        width: 70vw;
+        height: 80vw;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: white;
+        img{
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      .rate-brand{
+        box-sizing: border-box;
+        // padding: 5px 10px;
+        // background-color: $color-primary;
+        // border-radius: 5px;
+        // border: solid 1px $color-secundary;
+      }
+      section{
+        .product-name{
+          font-size: 24px;
+          text-transform: capitalize;
+          font-weight: 600;
+        }
+        .prise{
+          font-size: 38px;
+          font-weight: 800;
+        }
+        .brand{
+          font-size: 18px;
+          font-weight: 600;
+          text-transform: capitalize;
+        }
+        .rate{
+          color: rgb(216, 178, 7);
+          text-transform: lowercase;
+          font-size: 22px;
+          font-weight: 900;
+        }
+        .title-info{
+          text-transform: capitalize;
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+        // .offers{
+        //   display: flex;
+        // }
+        .add_car{
+          width: 80vw;
+          height: 50px;
+          background-color: $dark-green;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p{
+            font-size: 22px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $soft-cream;
+            letter-spacing: 5px;
+          }
+        }
+        .info{
+          max-width: 90vw;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  .content-other-product{
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .title-sub-product{
+    display: block;
+    margin: 5px;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    color: $soft-cream;
+    background-color:$dark-green;
+  }
+  .container-product__sub{
+    padding-top: 10px;
+    display: flex;
+    overflow: auto;
+    padding-right: 10px;
+    .sub-product__item{
+      margin-left: 10px;
+      flex: none;
+      height: 300px;
+      width: 200px;
+      border: solid 2px $dark-green;
+      border-radius: 5px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      .content-product__name{
+        text-transform: capitalize;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        color: $dark-grey;
+      }
+      .content-product__img{
+        height: 180px;
+        width: 150px;
+        background-color: white;
+        border-radius: 10px;
+        img{
+          width: 90%;
+        }
+      }
+      .content-product__price{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        p{
+          font-size: 22px;
+        }
+        a{
+          display: block;
+          background-color: $dark-green;
+          color: $soft-cream;
+          font-weight: 900px;
+          font-size: 16px;
+          padding: 10px 0;
+          text-transform: uppercase;
+          border-radius: 5px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.flex-space-between__row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-space-between__center{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

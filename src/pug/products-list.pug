@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head 
+    include components/head.pug 
+    title Minimarket 3D-Gina
+    link(rel="stylesheet", href="../css/products-list.css")
+  body 
+    include components/cartfloat.pug
+    include components/navbar.pug
+    include components/header.pug
+    //- div.space-phrase
+    //- p.phrase tomar bebidas alcoholicas en exeso es dañino
+    main
+      section.main-list__product 
+        div.category-name
+          p.title-name__section
+        section.tag-product
+        section.only-liquor_store
+        div.go_init
+          div.arrow_top
+        section.content-products__items 
+          //- article.contend-article
+          //-   div 
+          //-     p.product-name 
+          //-   div.content-image 
+          //-     img(src="", alt="").product-image
+          //-   a.content_price__rate(href="#/idProduct-1515")
+          //-     p.product-prise s/.
+          //-       span 24116
+          //-     p.product.rate ☆☆☆☆☆ 
+      script(src="/public/js/itemsFloat.js") 
+      include components/footer.pug
+      include components/scriptGlobal.pug
+      script(src="/public/js/listProducts.js") 
+
+    //- script(src="../../../public/js/productListScript.js") 

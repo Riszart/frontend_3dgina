@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  head
+    include components/head.pug 
+    title Minimarket 3D-Gina
+    link(rel="stylesheet", href="../css/product.css")
+  body
+    include components/navbar.pug
+    include components/header.pug
+    main
+      section.main-product 
+        section.content-product
+          //- div.flex-space-between__center
+          //-   p.product-name detergente sapolio 140gr
+          //-   //- p.rate sdfsd
+          //- div.product-image
+          //- div.flex-space-between__row.weght-brand
+          //-   p.weight 140gr
+          //-   p.brand age
+          //- div.flex-space-between__row
+          //-   p.prise S/.
+          //-     span.number-prise 1.70
+          //- div
+          //-   h4.title-info description
+          //-   p.info detergente para lavar ropa a
+        section.content-other-product
+          h4.title-sub-product productos similares 
+          div.container-product__sub 
+            //- div.sub-product__item
+            //- div.sub-product__item
+            //- div.sub-product__item
+            //- div.sub-product__item
+            //- div.sub-product__item
+            //- div.sub-product__item
+            //- div.sub-product__item
+            //- div.sub-product__item
+            //- div.sub-product__item
+      include components/footer.pug
+    include components/scriptGlobal.pug
+    script(src="/public/js/product.js") 

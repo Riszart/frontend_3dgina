@@ -1,0 +1,22 @@
+.cart-float{
+  display: none;
+  position: fixed;
+  top: 70px;
+  padding: 5px;
+  right: 0;
+  width: 50vw;
+  z-index: 1000;
+  background-color: $soft-gold;
+  border-radius: 8px;
+  .cart-top{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    img{
+      width: 56px;
+      height: 56px;
+      background-color: red;
+    }
+  }
+
+}

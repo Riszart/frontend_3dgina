@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+  head
+    include components/head.pug 
+    title Minimarket 3D-Gina
+    link(rel="stylesheet", href="../css/index.css")
+  body
+    include components/navbar.pug
+    //- include components/cartFloat.pug
+    include components/header.pug
+    article.contentShowImage
+      div.close.closeDivAd
+      img.showImage
+    main 
+      section.main-banner
+        include components/index/mainBanner.pug
+      section.product-solt
+        include components/index/productSolt.pug
+      section.product-categories
+        include components/index/productCategories.pug
+      section.product-brand
+        include components/index/productBrand.pug
+      section.banner-index
+        div.banner-top
+        div.container_banner-main
+          div.banner-main
+        div.banner-pay
+          p yape
+          p plin
+      section.content-categories
+        h2.content-categories__h2 🛒 Tu compra fácil aquí 
+        div.contentd-category__items
+          //- article.item-category
+      //- section.farm-contend
+      //-   h2.farm-contend__h2 granja 3d gina
+      //-   article
+      //-     img(src="/public/img/i/corral.jpg", alt="")
+      section.content-populares
+        p.style-title__section-p 🍏 Surtido para cada día 
+        div.contentd-articles__items
+          //- article.item-product 
+          //-   div
+          //-     P.title-product bolibar - active care
+          //-   div.contend-img
+          //-     img(src="", alt="")
+          //-   div.sub-description
+          //-     p.price 12.00 S/.
+      section.ad
+        //- article
+        //- article 
+      section.content-brand
+        p.style-title__section-p 🏆 Marcas que amas, aquí 
+        div.contentd-brand__items
+          //- article.item-brand
+          //-   div
+          //-     img(src="", alt="")
+      //- include components/singup.pug
+      include components/footer.pug
+    include components/scriptGlobal.pug
+    script(src="/public/js/setHome.js") 
+

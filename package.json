@@ -4,8 +4,12 @@
   "description": "frontend de minimarket 3d gina",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css": "sass ./src/sass:public/css --watch",
+    "html": "pug ./src/pug/ --out ./public/html/ --pretty --watch"
   },
   "author": "riszart daryl (22.r.d.v.c.12@gmail.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pug": "^3.0.3"
+  }
 }

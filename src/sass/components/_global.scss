@@ -1,0 +1,36 @@
+$dark-green : #2f7b3c;
+$soft-cream: #deeef1;
+$dark-grey : #4a4a4a;
+$reddish-brown: #8d5524;
+$soft-gold: #d4af37;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  width: 100vw;
+}
+main {
+  overflow: hidden;
+  background-color: $soft-cream;
+}
+li{
+  list-style: none;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+.inactive{
+  width: 0 !important;
+}
+.inactiveHeight{
+  max-height: 0px !important;;
+}
+
+.overfloeHide{
+  overflow: hidden;
+}
+

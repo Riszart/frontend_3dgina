@@ -1,0 +1,184 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  padding-bottom: 40px;
+  h2{
+    text-transform: capitalize;
+    color: black;
+    padding: 10px 0;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  .contend-cart{
+    width: 100%;
+    border-radius: 20px;
+    background-color: white;
+    .contend-items__top{
+      width: inherit;
+      text-align: center;
+      text-transform: capitalize;
+      padding: 8px 0;
+    }
+    .section.title{
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr ;
+      border-bottom: solid black 2px;
+      margin-bottom: 10px;
+      justify-items: center;
+      text-transform: capitalize;
+      padding-bottom: 4px;
+    }
+    .contend-items__center{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .cart__item{
+        box-sizing: border-box;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+        align-items: center;
+        padding: 0 8px;
+        .imagen-item{
+          width: 50px;
+          height: 50px;
+          justify-self: center;
+        }
+        .contend-name__unit{
+          display: flex;
+          gap: 4px;
+          .name{
+            text-transform: capitalize;
+          }
+        }
+        .id-product{
+          font-size: 14px;
+        }
+        .count{
+          width: 40px;
+          height: 24px;
+          text-align: center;
+          font-size: 16px;
+          justify-self: center;
+          background-color: transparent;
+          border: solid 1px $dark-green;
+          border-radius: none;
+        }
+        .price{
+          font-size: 14px;
+          display: flex;
+          justify-content: space-evenly;
+          div{
+            display: flex;
+          }
+          .contend-old{
+            color: red;
+            text-decoration: line-through;
+          }
+        }
+        .price-total__product{
+          justify-self: end;
+          font-size: 14px;
+          display: flex;
+        }
+        .close{
+          width: 30px;
+          height: 30px;
+          justify-self: end;
+          img{
+            width: 30px;
+          }
+        }
+      }
+    }
+    .contend-items__bottom{
+      border-top: solid black 2px;
+      margin-top: 10px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .desc{
+        color: red;
+      }
+      .total__cart{
+        background-color: rgb(106, 252, 126);
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+      }
+      .total{
+        padding: 15px;
+        border-top: solid $dark-grey 1px;
+        div{
+          span{
+            font-size: 18px;
+          }
+        }
+      }
+      div{
+        padding: 0 10px;
+        display: flex;
+        justify-content: space-between;
+        p{
+          text-transform: capitalize;
+        }
+
+        div{
+          display: flex;
+          gap: 5px;
+        }
+      }
+    }
+    .items-button{
+      margin-top: 18px;
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      #nameUser{
+        width: 70%;
+        font-size: 16px;
+        padding: 4px;
+        text-transform: capitalize;
+        border: none;
+        border-left: solid red 1px;
+        border-bottom: solid red 2px;
+        border-radius: none;
+        &:focus{
+          outline: none;
+        }
+        &:active{
+          background: $soft-gold;
+        }
+      }
+      #sendOrder{
+        width: 80%;
+        padding: 8px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 18px;
+        background-color: $dark-green;
+        color: $soft-gold;
+        letter-spacing: 8px;
+        border: solid 2px $soft-gold;
+        margin-bottom: 8px;
+        &:active{
+          background-color: $soft-gold;
+          border: solid 2px white;
+          color: $dark-green;
+        }
+      }
+    }
+  }
+}

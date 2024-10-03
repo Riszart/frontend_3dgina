@@ -1,0 +1,265 @@
+.go_init{
+  position: fixed;
+  z-index: 100;
+  right: 10px;
+  bottom: 10px;
+  height: 60px;
+  width: 60px; 
+  border-radius: 25px;
+  border: solid $dark-grey 2px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  &.more_18{
+    border-color: $soft-gold;
+  }
+  .arrow_top{
+    background-color: $dark-grey;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: relative;
+    &::after,&::before {
+      content: "";
+      height: 20px;
+      width: 4px;
+      position: absolute;
+      top: 13px;
+      background-color: $soft-gold;
+      border-radius: 2px;
+    }
+    &::after{
+      left: 17px;
+      transform: rotate(45deg);
+    }
+    &::before{
+      left: 30px;
+      transform: rotate(-45deg);
+    }
+    &.more_18{
+      background-color: $soft-gold;
+      &::after, &::before{
+        background-color: black;
+      }
+    }
+  }
+}
+.main-list__product{
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+  &.more_18{
+    background-color: black;
+    color: $soft-gold;
+  }
+  .category-name{
+    position: sticky;
+    top: 0px;
+    width: 100vw;
+    .title-name__section{
+      box-sizing: border-box;
+      padding: 10px 10px;
+      font-size: 20px; 
+      text-transform: uppercase;
+      font-weight: 800;
+      color: $dark-green;
+      &.more_18{
+        color: $soft-gold;      
+      }
+    }
+  }
+  .tag-product{
+    position: sticky;
+    top: 10px;
+    width: 100vw;
+    display: flex;
+    gap: 10px;
+    overflow: auto;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    background-color: $dark-green;
+    div{
+      flex: none;
+      height: 100%;
+      border: solid $soft-gold 1px;
+        color: $soft-gold;
+      &:active{
+        border-color: $reddish-brown;
+        color: $reddish-brown;
+        background-color: $dark-grey;
+      }
+      p{
+        display: block;
+        padding: 10px 15px;
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .only-liquor_store{
+    width: 100vw;
+    // border-top: solid $soft-gold 2px;
+    // border-bottom: solid $soft-gold 2px;
+    // overflow: auto;
+    p{
+      padding: 10px 5px;
+      letter-spacing: 4px;
+      display: block;
+      width: 100vw;
+      color: white;
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 20px;
+      font-weight: 900;
+      text-transform: uppercase;
+      animation-name: changeColor;
+      animation-direction: alternate;
+      animation-timing-function: ease;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      
+    }
+  }
+
+  .content-products__items {
+    display: grid;
+    grid-template-columns: calc(50vw - 15px) calc(50vw - 15px);
+    gap: 10px;
+    margin-top: 10px;
+    place-content: center;
+    box-sizing: border-box;
+    .content-article{
+      width: 100%;
+      color: $dark-grey;
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // border: solid $dark-green 2px;
+      justify-content: space-between;
+      background-color: white;
+      box-sizing: border-box;
+      .content-title__product{
+        width: 100%;
+        .product-name{
+          text-transform: capitalize;
+          text-align: center;
+        }
+      }
+      .content-image {
+        display: flex;
+        align-items: center;
+        height: 150px;
+        width: 90%;
+        overflow: hidden;
+        margin: 10px 0;
+        border-radius: 10px;
+        .product-img_left{
+          height: 100%;
+          width: 75%;
+          overflow: hidden;
+          position: relative;
+          img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            width: 100%;
+          }
+        }
+        .product-img_right{
+          height: 100%;
+          width: 25%;
+          display: flex;
+          gap: 2px;
+          flex-direction: column;
+          text-align: center;
+          .product-img__right-top{
+            margin: 0;
+            padding: 0;
+            height: 75%;
+            position: relative;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 10px;
+            p{
+              display: block;
+              text-transform: uppercase;
+              font-size: 12px;
+              font-weight: 700;
+            }
+          }
+          .product-img__right-bottom{
+            height: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            flex-direction: column;
+            letter-spacing: 0;
+            line-height: 10px;
+            border-top-left-radius: 10px;
+            .size{
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .product-name{
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .content_price__rate{
+        width: 100%;
+        display: flex;
+        padding: 5px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $soft-cream;
+        box-sizing: border-box;
+        .product-price{
+          color: $dark-green;
+          font-weight: 600;
+          font-size: 22px;
+        }
+        .add-product_cart{
+          border-radius: 10px;
+          display: flex;
+          border: 10%;
+          &:active{
+            background-color: $dark-green;
+          }
+        }
+        p{
+          .old-price{
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+}
+// .space-phrase{
+//   display: none;
+//   height: 45px;
+// }
+// .phrase{
+//   display: none;
+//   top: 70px;
+//   position: fixed;
+//   width: 100%;
+//   padding: 15px 0;
+//   text-transform: uppercase;
+//   font-size: 14px;
+//   background-color: black;
+//   color: white;
+// }

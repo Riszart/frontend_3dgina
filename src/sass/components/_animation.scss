@@ -1,0 +1,12 @@
+@keyframes changeColor {
+  from{
+    color: $soft-gold;
+    border-top: solid $soft-gold 2px;
+    border-bottom: solid $soft-gold 2px;
+  }
+  to{
+    color: white;
+    border-top: solid white 2px;
+    border-bottom: solid white 2px;
+  }
+}

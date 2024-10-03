@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+  head 
+    include components/head.pug 
+    title Minimarket 3D-Gina
+    link(rel="stylesheet", href="../css/cart.css")
+  body 
+    include components/navbar.pug
+    include components/header.pug
+    main
+      section.main
+        h2 cesta de compras
+        section.contend-cart
+          section.contend-items__top 
+            h3 productos
+          section.section.title
+            h4 nombre
+            h4 cantidad
+            h4 precio(S/.)
+          section.contend-items__center 
+            //- article.cart__item
+            //-   img.imagen-item(src="", alt="")
+            //-   div
+            //-     .name sapolina sdn an asd asdodas dfas
+            //-     .id-product id:121561526
+            //-   input(type="number" ).count
+            //-   .price
+            //-     p.old 15.00
+            //-     p.new 15.00
+            //-   .close
+            //-     img(src="/public/img/svg/delete.svg", alt="")
+          section.contend-items__bottom 
+            div
+              p productos
+              div 
+                span S/.
+                span.price-cart__total 0
+            div.desc
+              p ahorraste
+              div 
+                span S/.
+                span.price-cart__desc 0
+            div
+              p costo de envio
+              div 
+                span S/.
+                span no disponible
+            div.total__cart
+              p total
+              div 
+          section.items-button
+            input(type="text" id="nameUser" placeholder="nombre y apellido" required)
+            button#sendOrder comprar
+      include components/footer.pug
+  
+
+    script(src="/public/js/itemsFloat.js") 
+    script(src="/public/js/productAdd.js") 
+    include components/scriptGlobal.pug

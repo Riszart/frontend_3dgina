@@ -1,0 +1,179 @@
+.navBar-options{
+  z-index: 1000;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  transition-property: width;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  background-color: $dark-grey;
+  .close{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: calc(100vw - 50px);
+    top: 5px;
+    &::after, &::before{
+      content: '';
+      height: 30px;
+      width: 2px;
+      position: absolute;
+      top: 10px;
+      left: 19px;
+      background: $soft-gold;
+    }
+    &::after{
+      transform: rotate(45deg);
+    }
+    &::before{
+      transform: rotate(135deg);
+    }
+  }
+  .wellcome-nav{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    padding: 10px 0 10px 0;
+    min-width: 100vw;
+    color: $soft-cream;
+    background-color: $dark-green;
+  }
+  .content-list{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 25px;
+    text-transform: capitalize;
+    min-width: 95vw;
+    overflow: hidden;
+    .contend-category{
+      padding-top: 5px;
+      position: relative;
+      .line_category{
+        height: 1px;
+        width: 100%;
+        margin: 0 0 10px 0;
+        background-color: $soft-gold;
+      }
+      .content__list-nav {
+        min-width: 200px;
+        padding-bottom: 10px;
+        li {
+          width: 100%;
+          min-height: 70px;
+          min-width: 200px;
+          .contend-a_arrow{
+            width: 100%;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            a{
+              display: block;
+              color: $soft-cream;
+              &:active,&:hover {
+                color: $reddish-brown;
+              }
+            }
+            .arrow__right{
+              position: relative;
+              display: flex;
+              align-items: center;
+              border: solid 1px $soft-gold;
+              border-radius: 5px;
+              &:active {
+                background-color: $reddish-brown;
+              }
+              .arrow {
+                position: relative;
+                width: 40px;
+                height: 50px;
+                border-radius: 5px;
+                &::after,&::before{
+                  content: '';
+                  position: absolute;  
+                  left: 20px;
+                  height: 15px;
+                  width: 2px;
+                  background-color: $soft-gold;
+                }
+                &::before{
+                  top: 13px;
+                  transform: rotate(-45deg);
+                }
+                &::after{
+                  top: 23px;
+                  transform: rotate(45deg);
+                }
+              }
+            }
+          }
+          .filter-name_category{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            width: 100%;
+            max-height: 500px;
+            overflow: hidden;
+            transition-property: max-height;
+            transition-duration: 200ms;
+            transition-timing-function: ease-in-out;
+            a{
+              display: block;
+              text-transform: capitalize;
+              font-size: 18px;
+              color: $soft-gold;
+              padding-left: 20px;
+              &:hover{
+                opacity: .5;
+              }
+              &:active{
+                color: $reddish-brown;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .contend-link_social{
+    width: 100%;
+    margin-left: 30px;
+    height: 70px;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    img{
+      padding: 1px;
+      background-color: $soft-gold;
+      border-radius: 10px;
+      width: 60px;
+    }
+  }
+  .bottom-autor{
+    position: absolute;
+    min-width: 100vw;
+    bottom: 0;
+    left: 0;
+    margin-top: 10px;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 10px 0;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+
+  }
+}

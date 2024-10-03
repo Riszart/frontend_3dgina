@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+  head
+    include components/head.pug 
+    title Minimarket 3D-Gina - sing-up
+    link(rel="stylesheet", href="../css/singup.css")
+  body
+    include components/navbar.pug
+    include components/header.pug
+    main
+      section.main-reg 
+        section
+          h3 SER CLIENTE 
+        section.sing-up 
+          div.content-user.flex-space-between__row
+            label(for="") usuario:
+            input(type="text").style-registre__text
+          div.content-name.flex-space-between__row
+            label(for="") (*) nombre:
+            input(type="text").style-registre__text
+          div.content-surname.flex-space-between__row
+            label(for="") (*) apellidos:
+            input(type="text").style-registre__text
+          div.content-cell.flex-space-between__row
+            label(for="") (*) n° celular:
+            input(type="number").style-registre__text
+          div.content-location.flex-space-between__row
+            label(for="") (*) residencia:
+            input(type="text").style-registre__text
+          div.content-born.flex-space-between__row
+            label(for="") (*) fecha de nacimineto:
+            input(type="date")
+          div.content-check 
+            input(type="checkbox", name="")
+            label(for="") Tratamientos de dartos 
+              span (*)
+          div.content-check 
+            input(type="checkbox", name="")
+            label(for="") Terminos y condiciones
+              span (*)
+          div.content-check 
+            input(type="checkbox", name="")
+            label(for="") Recibir notificaciones
+              span (opcional) 
+          button REGISTRARSE 
+      include components/footer.pug
+    include components/scriptGlobal.pug
+
