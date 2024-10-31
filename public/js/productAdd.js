@@ -57,9 +57,12 @@ class CreateItem{
   }
   deleteProduct(article){
     const product = document.querySelector('.product-count')
-    localStorage.removeItem(this.id)
+
+    let objData = JSON.parse(localStorage.getItem('z3dgina'))
+    delete objData[this.id]
+    localStorage.setItem('z3dgina',JSON.stringify(objData))
+
     article.remove()
-    // product.textContent = localStorage.length
     priceTotal()
   }
 }
@@ -77,9 +80,11 @@ async function getData(url){
 }
 
 async function createTicket(){
-  for(let i = 0; i<localStorage.length ; i++){
-    let key = localStorage.key(i)
-    let value = localStorage.getItem(key)
+  let objDataLocal = JSON.parse(localStorage.getItem('z3dgina'))
+  
+  for(let i = 0; i<Object.keys(objDataLocal).length ; i++){
+    let key = Object.keys(objDataLocal)[i]
+    let value = Object.values(objDataLocal)[i]
     let id = key.split('-').join('')
     let category = key.split('-')[0]
     let store = `${category}${key.split('-')[1]}`

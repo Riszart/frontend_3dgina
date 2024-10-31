@@ -3,7 +3,7 @@ const URL_DATA = 'https://raw.githubusercontent.com/Riszart/backend_3dgina/main/
 class Products{
   constructor(url){
     this.url = url
-  } 
+  }
   async operate(){
     let hash = window.location.hash.substring(1)
     let nameCategory = hash.split('/')[2]
@@ -33,7 +33,7 @@ class Products{
       p.innerHTML = " tomar bebidas alcolicas en exeso es dañino"
       only_liquor.appendChild(p)
     }
-    
+
     const tagName = document.querySelector('.tag-product')
     Object.keys(products.urls).forEach((nameTag)=>{
       const div = document.createElement('div')
@@ -54,7 +54,7 @@ class Products{
   }
   showCategory(products){
     const products__items = document.querySelector('.content-products__items')
-    console.log(products)
+    // console.log(products)
     products.forEach(element => {
       if(element.stock == true){
         const a = document.createElement('article')
@@ -89,13 +89,15 @@ class Products{
         products__items.appendChild(a)
         const item = a.querySelector('.add-product_cart')
         item.addEventListener('click',()=>{
-          const data = +localStorage.getItem(`${element.id}`)
-          if(!data){
-            localStorage.setItem(`${element.id}`,'1')
-          }else{
-            localStorage.removeItem(`${element.id}`)
-            localStorage.setItem(`${element.id}`,`${data+1}`)
-          }
+
+          if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
+
+          let localStorageData = localStorage.getItem(`z3dgina`)
+          let dataObj = JSON.parse(localStorageData)
+
+          if(!dataObj[element.id]) dataObj[element.id] = 1
+          else dataObj[element.id] = dataObj[element.id]+1
+          localStorage.setItem('z3dgina',JSON.stringify(dataObj))
           addProducts()
           float(element)
         })
@@ -105,6 +107,7 @@ class Products{
   showProduct(){
   }
 }
+
 
 function addClass(element,className){
   document.querySelector(element).classList.add(className)

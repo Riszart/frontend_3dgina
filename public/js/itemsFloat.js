@@ -15,7 +15,8 @@ function addProducts(){
   const countItems = document.querySelector('.product-count')
 
   let suma = 0
-  Object.values(localStorage).forEach(element=>{
+  let dataObj = JSON.parse(localStorage.getItem('z3dgina'))
+  Object.values(dataObj).forEach(element=>{
     suma += parseInt(element)
   })
   countItems.textContent = suma
