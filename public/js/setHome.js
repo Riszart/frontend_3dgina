@@ -169,8 +169,9 @@ function showAdsLAger(){
 }
 
 function addProducts(){
+  verifyLocalStorege()
   const countItems = document.querySelector('.product-count')
-
+  
   let suma = 0
   let dataObj = JSON.parse(localStorage.getItem('z3dgina'))
 
@@ -182,3 +183,6 @@ function addProducts(){
 
 addProducts()
 
+function verifyLocalStorege(){
+  if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
+}

@@ -79,5 +79,4 @@ function createItem(obj,content){
 //   });
 // }
 
-
 showData_nav("https://raw.githubusercontent.com/Riszart/backend_3dgina/main/data.json")

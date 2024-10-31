@@ -12,6 +12,7 @@ function float(product){
   },5000)
 }
 function addProducts(){
+  if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
   const countItems = document.querySelector('.product-count')
 
   let suma = 0
