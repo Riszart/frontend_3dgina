@@ -85,24 +85,35 @@ async function createTicket(){
   for(let i = 0; i<Object.keys(objDataLocal).length ; i++){
     let key = Object.keys(objDataLocal)[i]
     let value = Object.values(objDataLocal)[i]
-    let id = key.split('-').join('')
+    let idMain = key.split('-')
+    let idNext
+    if(key.length > 11)idNext = idMain.pop()
+    let id = idMain.join('')
+
     let category = key.split('-')[0]
     let store = `${category}${key.split('-')[1]}`
     const data = await getData(`https://raw.githubusercontent.com/Riszart/backend_3dgina/main/json/${category}/${store}.json`)
-
     const found = data.find(element=>{
       return element.idProduct === id
     })
     let und = `${found.unit}${found.extent}`
-    const item = new CreateItem({
-    unit:und,
-    name:found.name,
-    id:key,
-    price:found.newPrice,
-    oldPrice:found.price,
-    image:found.image.url_01,
-    count:value
-  })
+
+    const objProduct = {
+      unit:und,
+      name:found.name,
+      id:key,
+      price:found.newPrice,
+      oldPrice:found.price,
+      image:found.image.url_01,
+      count:value
+    }
+    if(found.more){
+      let product = found.more.find(item=>{return item.id === key})
+      objProduct.name = product.name
+      objProduct.image = product.image
+    }
+
+    const item = new CreateItem(objProduct)
   item.generateTable()
   } 
   priceTotal()

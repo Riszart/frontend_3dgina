@@ -509,6 +509,93 @@ footer .banner-developer a span {
   background-color: black;
 }
 
+.background-item {
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.contend-float_product {
+  display: none;
+  position: fixed;
+  z-index: 1100;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  transform: translate(0, -50%);
+  background-color: #2f7b3c;
+}
+.contend-float_product .close-section {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: 5px;
+  top: -45px;
+}
+.contend-float_product .close-section::before {
+  content: "";
+  background-color: #d4af37;
+  width: 40px;
+  height: 4px;
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  transform: translate(-23%, -50%) rotate(-45deg);
+  border-radius: 1px;
+}
+.contend-float_product .close-section::after {
+  content: "";
+  background-color: #d4af37;
+  width: 40px;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  transform: translate(3%, -50%) rotate(45deg);
+}
+.contend-float_product .foat-product_select {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 10%;
+}
+.contend-float_product .foat-product_select .contend-product {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  border-radius: 5px;
+  background-color: #deeef1;
+}
+.contend-float_product .foat-product_select .contend-product .product-section_text {
+  width: 100%;
+}
+.contend-float_product .foat-product_select .contend-product .product-section_text h4 {
+  padding: 5px 0;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.contend-float_product .foat-product_select .contend-product .content_price__rate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+.contend-float_product .foat-product_select .contend-product .content_price__rate .product-price {
+  width: 40%;
+  font-size: 24px;
+  font-weight: 700;
+}
+.contend-float_product .foat-product_select .contend-product .product-section_img {
+  height: 80px;
+}
+
 .main-list__product {
   position: relative;
   height: 100%;

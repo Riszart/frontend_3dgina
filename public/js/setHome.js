@@ -33,7 +33,7 @@ async function generateCode(data){
   const contend = document.querySelector(".contentd-articles__items")
   data.forEach(element => {
     if(element.stock == true){
-      console.log(element.stock)
+      // console.log(element.stock)
       const article = document.createElement('article')
       article.classList.add('item-product')
       article.innerHTML = `
@@ -169,7 +169,7 @@ function showAdsLAger(){
 }
 
 function addProducts(){
-  verifyLocalStorege()
+  if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
   const countItems = document.querySelector('.product-count')
   
   let suma = 0
@@ -182,7 +182,32 @@ function addProducts(){
 }
 
 addProducts()
+//  https://docs.google.com/spreadsheets/d/e/2PACX-1vRg0Kxq0hL-1HohmCajBmAYTrKor35swGHXoP-eYnr3-qjOTSLp6gJesRO61ivlBCdKjM0GXqSiu-5a/pub?gid=123456789&output=csv
+fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRg0Kxq0hL-1HohmCajBmAYTrKor35swGHXoP-eYnr3-qjOTSLp6gJesRO61ivlBCdKjM0GXqSiu-5a/pub?gid=1367228316&output=csv")
+    .then(response => response.text())
+    .then(data => {
 
-function verifyLocalStorege(){
-  if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
-}
+        // Convierte el CSV en un array de arrays
+        const rows = data.split('\n').map(row => row.split(','));
+
+        // Acceder a una fila específica (Ejemplo: segunda fila)
+        const specificRow = rows[1]; // Las filas comienzan desde el índice 0
+        console.log("Fila específica:", specificRow);
+
+        // Acceder a una columna específica (Ejemplo: segunda columna de cada fila)
+        const specificColumn = rows.map(row => row[1]); // Segunda columna en todas las filas
+        console.log("Columna específica:", specificColumn);
+
+        // Acceder a una celda específica (Ejemplo: tercera fila, segunda columna)
+        const specificCell = rows[2][1]; // Tercera fila (índice 2), segunda columna (índice 1)
+        console.log("Celda específica:", specificCell);
+
+        // const rows = data.split('\n').map(row => row.split(',')); // Convertir CSV a array de arrays
+        // console.log(rows); // Aquí tienes los datos como un array de filas y columnas
+        
+        // // Ejemplo: Manipular cada fila
+        // rows.forEach(row => {
+        //     console.log(row); // Cada fila es un array de valores
+        // });
+    })
+    .catch(error => console.error('Error:', error));

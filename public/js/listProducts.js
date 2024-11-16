@@ -52,11 +52,12 @@ class Products{
       this.showCategory(items)
     }
   }
+
   showCategory(products){
     const products__items = document.querySelector('.content-products__items')
     // console.log(products)
     products.forEach(element => {
-      if(element.stock == true){
+      // if(element.stock == true){
         const a = document.createElement('article')
         a.classList.add("content-article")
         // a.href = `#product/${element.id.split('-').join('')}/${element.name.split(' ').join('')}`
@@ -89,30 +90,78 @@ class Products{
         products__items.appendChild(a)
         const item = a.querySelector('.add-product_cart')
         item.addEventListener('click',()=>{
+          if(element.more){
+            let float = document.querySelector('.foat-product_select')
+            float.innerHTML = ""
+            element.more.forEach((item)=>{
+              if(item.stock == false)return
+              const article = document.createElement('article')
+              article.classList.add('contend-product')
+              article.innerHTML= `
+                <img class="product-section_img" src="${item.image}">
+                <div class="product-section_text">
+                  <h4>${item.name}</h4>
+                    <div class="content_price__rate">
+                      <p class="product-price">
+                        s/. <span>${element.newPrice}</span>
+                      </p>
+                      <div class="add-product_cart-section">
+                        <img src="../img/svg/add.svg">
+                      </div>
+                    </div>
+                </div>
+              ` 
+              float.appendChild(article)
+              const producSelect = article.querySelector('.add-product_cart-section')
+              producSelect.addEventListener('click',()=>{
+                console.log(element)
+                element.name = item.name
+                // element.newPrise = item.newPrice
+                element.id = item.id
+                element.idProduct = item.idProduct
+                element.image.url_01 = item.image
+                console.log(element)
 
-          if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
-
-          let localStorageData = localStorage.getItem(`z3dgina`)
-          let dataObj = JSON.parse(localStorageData)
-
-          if(!dataObj[element.id]) dataObj[element.id] = 1
-          else dataObj[element.id] = dataObj[element.id]+1
-          localStorage.setItem('z3dgina',JSON.stringify(dataObj))
-          addProducts()
-          float(element)
+                this.getDataProductType(element)
+                document.querySelector('.contend-float_product').style.display = "none"
+                document.querySelector('.background-item').style.display = "none"
+              })
+            })
+            document.querySelector('.contend-float_product').style.display = "block"
+            document.querySelector('.background-item').style.display = "block"
+          }else{
+            this.getDataProductType(element)
+          }
         })
-      }
+      // }
     });
+  }
+  getDataProductType(element){
+    console.log(element)
+    if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
+
+      let localStorageData = localStorage.getItem(`z3dgina`)
+      let dataObj = JSON.parse(localStorageData)
+
+      if(!dataObj[element.id]) dataObj[element.id] = 1
+      else dataObj[element.id] = dataObj[element.id]+1
+      localStorage.setItem('z3dgina',JSON.stringify(dataObj))
+      addProducts()
+      float(element)
   }
   showProduct(){
   }
 }
 
+const sectionClose = document.querySelector('.close-section')
+sectionClose.addEventListener('click',()=>{
+  document.querySelector('.contend-float_product').style.display = "none"
+  document.querySelector('.background-item').style.display = "none"
+})
 
 function addClass(element,className){
   document.querySelector(element).classList.add(className)
 }
-
 window.addEventListener('scroll',showBtn)
 const topHeader = document.querySelector('.header')
 const btnArrow = document.querySelector('.arrow_top')
