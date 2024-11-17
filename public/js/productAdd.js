@@ -198,7 +198,7 @@ function sendOrder(order){
 
 // testing
 
-let a = element.querySelector('.deleteCartShop')
+let a = document.querySelector('.deleteCartShop')
 a.addEventListener('click',()=>{
   localStorage.clear()
 })
