@@ -38,7 +38,7 @@ class CreateItem{
         <span>S/.</span><p class="price-product">${Number(this.price*this.count).toFixed(2)}</p>
       </div>
       <div class="close">
-        <img src="/public/img/svg/delete.svg" alt="">
+        <img src="../img/svg/delete.svg" alt="">
       </div>
     `
     const deleteProduct = article.querySelector('.close')
@@ -195,3 +195,10 @@ function sendOrder(order){
   contendShoppingCart.innerHTML = ""
   priceTotal()
 }
+
+// testing
+
+let a = element.querySelector('.deleteCartShop')
+a.addEventListener('click',()=>{
+  localStorage.clear()
+})
