@@ -94,7 +94,7 @@ class Products{
             let float = document.querySelector('.foat-product_select')
             float.innerHTML = ""
             element.more.forEach((item)=>{
-              if(item.stock == false)return
+              // if(item.stock == false)return
               const article = document.createElement('article')
               article.classList.add('contend-product')
               article.innerHTML= `
