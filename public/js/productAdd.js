@@ -201,4 +201,5 @@ function sendOrder(order){
 let a = document.querySelector('.deleteCartShop')
 a.addEventListener('click',()=>{
   localStorage.clear()
+  location.reload()
 })
