@@ -57,7 +57,7 @@ class Products{
     const products__items = document.querySelector('.content-products__items')
     // console.log(products)
     products.forEach(element => {
-      if(element.stock == true){
+      // if(element.stock == true){
         const a = document.createElement('article')
         a.classList.add("content-article")
         // a.href = `#product/${element.id.split('-').join('')}/${element.name.split(' ').join('')}`
@@ -133,7 +133,7 @@ class Products{
             this.getDataProductType(element)
           }
         })
-      }
+      // }
     });
   }
   getDataProductType(element){
