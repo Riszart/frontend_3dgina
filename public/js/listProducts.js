@@ -59,6 +59,8 @@ class Products{
     products.forEach(element => {
       if(element.stock == true){
         const a = document.createElement('article')
+        const offerArticle = document.createElement('article')
+        offerArticle.classList.add('offer-product')
         a.classList.add("content-article")
         // a.href = `#product/${element.id.split('-').join('')}/${element.name.split(' ').join('')}`
         a.innerHTML = `
@@ -79,16 +81,23 @@ class Products{
             </div>
           </a>
           <div class="content_price__rate">
-            <p class="product-price">
-              s/. <span>${element.newPrice}</span>
-            </p>
+            <div class="product-price">
+              <p class="product-new_price">
+                s/. <span>${element.newPrice}</span>
+              </p>
+              <p class="product-old_price">
+                ${validatePrice(element,offerArticle)}
+              </p>
+            </div>
             <div class="add-product_cart">
-              <img src="../img/svg/add.svg">
+              <p>agregar</p>
             </div>
           </div>
         `
+        a.appendChild(offerArticle)
         products__items.appendChild(a)
         const item = a.querySelector('.add-product_cart')
+        
         item.addEventListener('click',()=>{
           if(element.more){
             let float = document.querySelector('.foat-product_select')
@@ -106,7 +115,7 @@ class Products{
                         s/. <span>${element.newPrice}</span>
                       </p>
                       <div class="add-product_cart-section">
-                        <img src="../img/svg/add.svg">
+                        <p>add product</p><img src="../img/svg/add-white.svg">
                       </div>
                     </div>
                 </div>
@@ -120,7 +129,6 @@ class Products{
                 element.id = item.id
                 element.idProduct = item.idProduct
                 element.image.url_01 = item.image
-                console.log(element)
 
                 this.getDataProductType(element)
                 document.querySelector('.contend-float_product').style.display = "none"
@@ -137,7 +145,6 @@ class Products{
     });
   }
   getDataProductType(element){
-    console.log(element)
     if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
 
       let localStorageData = localStorage.getItem(`z3dgina`)
@@ -152,7 +159,20 @@ class Products{
   showProduct(){
   }
 }
-
+function validatePrice(element,offerElement){
+  if(element.price == "")return ""
+  let offer = (100*(element.price-element.newPrice))/element.newPrice
+  offerElement.innerHTML = `
+  <div class= "offer-name">off</div>
+  <div class= "offer-contend_data">
+    <p class = "offer_value">${offer.toFixed(2)}</p>
+    <span class="icon_offer">%</span>
+  </div>
+  `
+  offerElement.style.display = "flex"
+  console.log(offer,offerElement)
+  return `s/. <span>${element.price}</span>`
+} 
 const sectionClose = document.querySelector('.close-section')
 sectionClose.addEventListener('click',()=>{
   document.querySelector('.contend-float_product').style.display = "none"

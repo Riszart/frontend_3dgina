@@ -33,6 +33,9 @@ async function generateCode(data){
   const contend = document.querySelector(".contentd-articles__items")
   data.forEach(element => {
     if(element.stock == true){
+      const offerArticle = document.createElement('article')
+      offerArticle.classList.add('offer-product')
+
       // console.log(element.stock)
       const article = document.createElement('article')
       article.classList.add('item-product')
@@ -55,17 +58,39 @@ async function generateCode(data){
             </div>
         </div>
       </a>
-      <div class="sub-description">
-        <div>
-          <p class="price">S/. ${element.newPrice}</p>
+      <div class="content_price__rate">
+        <div class="product-price">
+          <p class="product-new_price">
+            s/. <span>${element.newPrice}</span>
+          </p>
+          <p class="product-old_price">
+            ${validatePrice(element,offerArticle)}
+          </p>
         </div>
-        <div class="add-product"></div>
+        <div class="add-product_cart">
+          <p>agregar</p>
+        </div>
       </div>
       `
+      article.appendChild(offerArticle)
       contend.appendChild(article)
     }
   });
 }
+function validatePrice(element,offerElement){
+  if(element.price == "")return ""
+  let offer = (100*(element.price-element.newPrice))/element.newPrice
+  offerElement.innerHTML = `
+  <div class= "offer-name">off</div>
+  <div class= "offer-contend_data">
+    <p class = "offer_value">${offer.toFixed(2)}</p>
+    <span class="icon_offer">%</span>
+  </div>
+  `
+  offerElement.style.display = "flex"
+  console.log(offer,offerElement)
+  return `s/. <span>${element.price}</span>`
+} 
 async function getBrand(){
   const data = await getData('https://raw.githubusercontent.com/Riszart/backend_3dgina/main/dataBrand.json')
   await generateBrand(data)

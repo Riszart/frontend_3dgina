@@ -562,15 +562,35 @@ footer .banner-developer a span {
   padding: 10px 10px;
   margin-bottom: 40px;
 }
+.content-populares .contentd-articles__items .offer-product {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  font-weight: 600;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+  color: white;
+  background-color: rgb(255, 55, 55);
+}
+.content-populares .contentd-articles__items .offer-product .offer-name {
+  margin-right: 5px;
+}
+.content-populares .contentd-articles__items .offer-product .offer-contend_data {
+  display: flex;
+}
 .content-populares .contentd-articles__items .item-product {
   position: relative;
   flex: none;
   display: flex;
-  gap: 4px;
+  gap: 10px;
   flex-direction: column;
   align-items: center;
   width: 220px;
   background-color: white;
+  padding: 10px;
 }
 .content-populares .contentd-articles__items .item-product .contend-title {
   height: 70px;
@@ -578,6 +598,7 @@ footer .banner-developer a span {
   padding: 5px 10px;
   text-transform: capitalize;
   color: #4a4a4a;
+  align-self: start;
 }
 .content-populares .contentd-articles__items .item-product .contend-title .title-product {
   display: block;
@@ -633,42 +654,68 @@ footer .banner-developer a span {
   justify-content: center;
   border-top-left-radius: 10px;
 }
-.content-populares .contentd-articles__items .item-product .sub-description {
-  height: 50px;
-  position: relative;
-  bottom: 0;
+.content-populares .contentd-articles__items .item-product .content_price__rate {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: content-box;
+}
+.content-populares .contentd-articles__items .item-product .content_price__rate .product-price {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8px;
-}
-.content-populares .contentd-articles__items .item-product .sub-description .price {
-  font-weight: 800;
-  font-size: 18px;
-  color: #2f7b3c;
+  padding: 5px;
   width: 100%;
+  background-color: #deeef1;
 }
-.content-populares .contentd-articles__items .item-product .sub-description .add-product {
+.content-populares .contentd-articles__items .item-product .content_price__rate .product-price .product-new_price {
+  color: #2f7b3c;
+  font-weight: 600;
+  font-size: 22px;
+}
+.content-populares .contentd-articles__items .item-product .content_price__rate .product-price .product-old_price {
+  letter-spacing: 2px;
+  max-width: 100px;
   position: relative;
-  height: 30px;
-  width: 30px;
-  border-radius: 5px;
-  border: solid 2px #4a4a4a;
+  color: red;
+  font-size: 18px;
+  font-weight: 600;
 }
-.content-populares .contentd-articles__items .item-product .sub-description .add-product::after, .content-populares .contentd-articles__items .item-product .sub-description .add-product::before {
+.content-populares .contentd-articles__items .item-product .content_price__rate .product-price .product-old_price::before {
   content: "";
-  height: 3px;
-  width: 20px;
-  border-radius: 2px;
-  background-color: #4a4a4a;
+  width: 100%;
+  height: 2px;
   position: absolute;
-  top: 14px;
-  left: 5px;
+  top: 50%;
+  transform: rotate(15deg);
+  background-color: red;
 }
-.content-populares .contentd-articles__items .item-product .sub-description .add-product::after {
-  transform: rotate(90deg);
+.content-populares .contentd-articles__items .item-product .content_price__rate .add-product_cart {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f7b3c;
+}
+.content-populares .contentd-articles__items .item-product .content_price__rate .add-product_cart:active {
+  background-color: #d4af37;
+}
+.content-populares .contentd-articles__items .item-product .content_price__rate .add-product_cart p {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+.content-populares .contentd-articles__items .item-product .content_price__rate p .old-price {
+  text-decoration: line-through;
 }
 
 .ad {
