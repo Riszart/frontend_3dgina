@@ -62,9 +62,13 @@ class Product{
     </section>
     `
     section.addEventListener('click',()=>{
-      let element = product.more.find((item)=>item.id == section.id)
-      if(!element){element = product.more[0]}
-
+      let element
+      if(product.more){
+        element = product.more.find((item)=>item.id == section.id)
+        if(!element){element = product.more[0]}
+      }else{
+        element = product
+      }
       if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
         let localStorageData = localStorage.getItem(`z3dgina`)
         let dataObj = JSON.parse(localStorageData)
