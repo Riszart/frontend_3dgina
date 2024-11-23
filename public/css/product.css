@@ -477,6 +477,21 @@ footer .banner-developer a span {
   align-items: center;
   gap: 20px;
 }
+.main-product .content-product .product .send {
+  width: 100%;
+}
+.main-product .content-product .product .send p {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.main-product .content-product .product .send p:nth-child(1) {
+  background-color: rgb(255, 51, 51);
+}
+.main-product .content-product .product .send p:nth-child(2) {
+  background-color: rgb(63, 241, 63);
+}
 .main-product .content-product .product .title-name {
   display: flex;
   flex-direction: column;
@@ -488,8 +503,7 @@ footer .banner-developer a span {
   font-weight: 600;
 }
 .main-product .content-product .product .product-image {
-  width: 70vw;
-  height: 80vw;
+  width: 300px;
   border-radius: 10px;
   overflow: hidden;
   background-color: white;
@@ -536,6 +550,9 @@ footer .banner-developer a span {
   justify-content: center;
   align-items: center;
 }
+.main-product .content-product .product section .add_car:active {
+  background-color: #d4af37;
+}
 .main-product .content-product .product section .add_car p {
   font-size: 22px;
   text-transform: uppercase;
@@ -546,6 +563,23 @@ footer .banner-developer a span {
 .main-product .content-product .product section .info {
   max-width: 90vw;
   overflow: hidden;
+}
+.main-product .content-product .contend-sub_product {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.main-product .content-product .contend-sub_product .sub-product_item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  gap: 10px;
+  padding: 5px;
+}
+.main-product .content-product .contend-sub_product .sub-product_item img {
+  width: 60px;
 }
 .main-product .content-other-product {
   width: 100%;

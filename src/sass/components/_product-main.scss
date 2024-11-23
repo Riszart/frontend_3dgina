@@ -12,6 +12,21 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
+      .send{
+        width: 100%;
+        p{
+          padding: 5px;
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: capitalize;
+        }
+        p:nth-child(1){
+          background-color: rgb(255, 51, 51);
+        }
+        p:nth-child(2){
+          background-color: rgb(63, 241, 63);
+        }
+      }
       .title-name{
         display: flex;
         flex-direction: column;
@@ -23,8 +38,7 @@
         }
       }
       .product-image{
-        width: 70vw;
-        height: 80vw;
+        width: 300px;
         border-radius: 10px;
         overflow: hidden;
         background-color: white;
@@ -67,9 +81,6 @@
           font-weight: 600;
           margin-bottom: 10px;
         }
-        // .offers{
-        //   display: flex;
-        // }
         .add_car{
           width: 80vw;
           height: 50px;
@@ -78,6 +89,9 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          &:active{
+            background-color: $soft-gold;
+          }
           p{
             font-size: 22px;
             text-transform: uppercase;
@@ -89,6 +103,23 @@
         .info{
           max-width: 90vw;
           overflow: hidden;
+        }
+      }
+    }
+    .contend-sub_product{
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .sub-product_item{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        gap: 10px;
+        padding: 5px;
+        img{
+          width: 60px;
         }
       }
     }

@@ -4,7 +4,9 @@ function float(product){
   const unit = document.querySelector('.unit')
   const titleProduct = document.querySelector('.cart-bottom p')
   unit.textContent = `1-${product.unit}${product.extent}`
-  floatCartImg.src = product.image.url_01
+  if(!product.image.url_01)floatCartImg.src = product.image
+  else floatCartImg.src = product.image.url_01
+
   floatCart.style.display = "block"
   titleProduct.textContent = product.name
   setTimeout(()=>{

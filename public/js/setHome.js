@@ -74,9 +74,73 @@ async function generateCode(data){
       `
       article.appendChild(offerArticle)
       contend.appendChild(article)
+
+      const item = article.querySelector('.add-product_cart')
+        
+      item.addEventListener('click',()=>{
+        if(element.more){
+          let float = document.querySelector('.foat-product_select')
+          float.innerHTML = ""
+          element.more.forEach((item)=>{
+            if(item.stock == false)return
+            const article = document.createElement('article')
+            article.classList.add('contend-product')
+            article.innerHTML= `
+              <img class="product-section_img" src="${item.image}">
+              <div class="product-section_text">
+                <h4>${item.name}</h4>
+                  <div class="content_price__rate">
+                    <p class="product-price">
+                      s/. <span>${element.newPrice}</span>
+                    </p>
+                    <div class="add-product_cart-section">
+                      <p>add product</p><img src="../img/svg/add-white.svg">
+                    </div>
+                  </div>
+              </div>
+            ` 
+            float.appendChild(article)
+            const producSelect = article.querySelector('.add-product_cart-section')
+            producSelect.addEventListener('click',()=>{
+              console.log(element)
+              element.name = item.name
+              // element.newPrise = item.newPrice
+              element.id = item.id
+              element.idProduct = item.idProduct
+              element.image.url_01 = item.image
+
+              getDataProductType(element)
+              document.querySelector('.contend-float_product').style.display = "none"
+              document.querySelector('.background-item').style.display = "none"
+            })
+          })
+          document.querySelector('.contend-float_product').style.display = "block"
+          document.querySelector('.background-item').style.display = "block"
+        }else{
+          getDataProductType(element)
+        }
+      })
     }
   });
 }
+const sectionClose = document.querySelector('.close-section')
+sectionClose.addEventListener('click',()=>{
+  document.querySelector('.contend-float_product').style.display = "none"
+  document.querySelector('.background-item').style.display = "none"
+})
+function getDataProductType(element){
+  if(!localStorage.getItem(`z3dgina`)) localStorage.setItem(`z3dgina`,JSON.stringify({}))
+
+    let localStorageData = localStorage.getItem(`z3dgina`)
+    let dataObj = JSON.parse(localStorageData)
+
+    if(!dataObj[element.id]) dataObj[element.id] = 1
+    else dataObj[element.id] = dataObj[element.id]+1
+    localStorage.setItem('z3dgina',JSON.stringify(dataObj))
+    addProducts()
+    float(element)
+}
+
 function validatePrice(element,offerElement){
   if(element.price == "")return ""
   let offer = (100*(element.price-element.newPrice))/element.newPrice
@@ -207,32 +271,32 @@ function addProducts(){
 }
 
 addProducts()
-//  https://docs.google.com/spreadsheets/d/e/2PACX-1vRg0Kxq0hL-1HohmCajBmAYTrKor35swGHXoP-eYnr3-qjOTSLp6gJesRO61ivlBCdKjM0GXqSiu-5a/pub?gid=123456789&output=csv
-fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRg0Kxq0hL-1HohmCajBmAYTrKor35swGHXoP-eYnr3-qjOTSLp6gJesRO61ivlBCdKjM0GXqSiu-5a/pub?gid=1367228316&output=csv")
-    .then(response => response.text())
-    .then(data => {
+// //  https://docs.google.com/spreadsheets/d/e/2PACX-1vRg0Kxq0hL-1HohmCajBmAYTrKor35swGHXoP-eYnr3-qjOTSLp6gJesRO61ivlBCdKjM0GXqSiu-5a/pub?gid=123456789&output=csv
+// fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRg0Kxq0hL-1HohmCajBmAYTrKor35swGHXoP-eYnr3-qjOTSLp6gJesRO61ivlBCdKjM0GXqSiu-5a/pub?gid=1367228316&output=csv")
+//     .then(response => response.text())
+//     .then(data => {
 
-        // Convierte el CSV en un array de arrays
-        const rows = data.split('\n').map(row => row.split(','));
+//         // Convierte el CSV en un array de arrays
+//         const rows = data.split('\n').map(row => row.split(','));
 
-        // Acceder a una fila específica (Ejemplo: segunda fila)
-        const specificRow = rows[1]; // Las filas comienzan desde el índice 0
-        console.log("Fila específica:", specificRow);
+//         // Acceder a una fila específica (Ejemplo: segunda fila)
+//         const specificRow = rows[1]; // Las filas comienzan desde el índice 0
+//         console.log("Fila específica:", specificRow);
 
-        // Acceder a una columna específica (Ejemplo: segunda columna de cada fila)
-        const specificColumn = rows.map(row => row[1]); // Segunda columna en todas las filas
-        console.log("Columna específica:", specificColumn);
+//         // Acceder a una columna específica (Ejemplo: segunda columna de cada fila)
+//         const specificColumn = rows.map(row => row[1]); // Segunda columna en todas las filas
+//         console.log("Columna específica:", specificColumn);
 
-        // Acceder a una celda específica (Ejemplo: tercera fila, segunda columna)
-        const specificCell = rows[2][1]; // Tercera fila (índice 2), segunda columna (índice 1)
-        console.log("Celda específica:", specificCell);
+//         // Acceder a una celda específica (Ejemplo: tercera fila, segunda columna)
+//         const specificCell = rows[2][1]; // Tercera fila (índice 2), segunda columna (índice 1)
+//         console.log("Celda específica:", specificCell);
 
-        // const rows = data.split('\n').map(row => row.split(',')); // Convertir CSV a array de arrays
-        // console.log(rows); // Aquí tienes los datos como un array de filas y columnas
+//         // const rows = data.split('\n').map(row => row.split(',')); // Convertir CSV a array de arrays
+//         // console.log(rows); // Aquí tienes los datos como un array de filas y columnas
         
-        // // Ejemplo: Manipular cada fila
-        // rows.forEach(row => {
-        //     console.log(row); // Cada fila es un array de valores
-        // });
-    })
-    .catch(error => console.error('Error:', error));
+//         // // Ejemplo: Manipular cada fila
+//         // rows.forEach(row => {
+//         //     console.log(row); // Cada fila es un array de valores
+//         // });
+//     })
+//     .catch(error => console.error('Error:', error));

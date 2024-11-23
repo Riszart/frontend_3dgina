@@ -5,6 +5,7 @@ html(lang="en")
     title Z3D-Gina
     link(rel="stylesheet", href="../css/index.css")
   body
+    include components/cartfloat.pug
     include components/navbar.pug
     //- include components/cartFloat.pug
     include components/header.pug
@@ -27,6 +28,10 @@ html(lang="en")
         div.banner-pay
           p yape
           p plin
+      div.background-item
+      section.contend-float_product
+        div.close-section
+        div.foat-product_select
       section.content-categories
         h2.content-categories__h2 🛒 Tu compra fácil aquí 
         div.contentd-category__items
@@ -56,6 +61,7 @@ html(lang="en")
           //-     img(src="", alt="")
       //- include components/singup.pug
       include components/footer.pug
+    script(src="../js/itemsFloat.js") 
     include components/scriptGlobal.pug
     script(src="../js/setHome.js") 
 

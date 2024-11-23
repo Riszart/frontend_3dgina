@@ -5,6 +5,7 @@ html(lang="en")
     title Z3D-Gina
     link(rel="stylesheet", href="../css/product.css")
   body
+    include components/cartfloat.pug
     include components/navbar.pug
     include components/header.pug
     main
@@ -37,4 +38,5 @@ html(lang="en")
             //- div.sub-product__item
       include components/footer.pug
     include components/scriptGlobal.pug
+    script(src="../js/itemsFloat.js") 
     script(src="../js/product.js") 
