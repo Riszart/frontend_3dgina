@@ -16,9 +16,6 @@ function goCategory(hash){
     window.location.reload()
   }
 }
-console.log(location)
-
-
 
 function goIdProduct(hash){
   window.location.href = `${operateUrl()}/product.html#${hash}`

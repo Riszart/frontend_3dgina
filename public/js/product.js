@@ -37,7 +37,7 @@ class Product{
     section.innerHTML= `
     <section class="flex-space-between__center title-name">
       <p class="product-name">${product.name}</p>
-      <p class="weight">${product.unit}-${product.extent}</p>
+      <p class="weight">${product.unit} ${product.extent}</p>
     </section>
     <section class="product-image">
       <img  src="${product.image.url_01}">
@@ -50,18 +50,21 @@ class Product{
       <p class="prise">s/.
         <span class="number-prise">${product.newPrice}</span>
       </p>
+      ${offer(product,section)}
     </section>
     <section class="send">
       <p>envio no disponible</p>
       <p>recojo en el local de venta</p>
     </section>
-    <section calss="content-btn_car">
+    <section class="content-btn_car">
       <div class="add_car">
         <p>agregar</p>
       </div>
     </section>
     `
-    section.addEventListener('click',()=>{
+
+    const btn = section.querySelector('.content-btn_car')
+    btn.addEventListener('click',()=>{
       let element
       if(product.more){
         element = product.more.find((item)=>item.id == section.id)
@@ -79,7 +82,6 @@ class Product{
         addProducts()
         float(element,element.image)
     })
-
     
     contend.appendChild(section)
 
@@ -96,11 +98,9 @@ class Product{
         `
         sudProduct.appendChild(div)
         div.addEventListener('click',()=>{
-          section
           const allsectionProduct = document.querySelectorAll('.sub-product_item')
           allsectionProduct.forEach(element=>{
             element.style.outline = 'none'
-            console.log(element)
           })
           console.log()
           div.style.outline = "#d4af37 solid 3px"
@@ -121,21 +121,36 @@ class Product{
       const article = document.createElement('arcicle')
       article.classList.add('sub-product__item')
       article.innerHTML = `
-      <div class="content-product__name">${product.name} : ${product.unit}${product.extent}</div>
-      <div class="content-product__img">
-        <img src="${product.image.url_01}">
-      </div>
-      <div class="content-product__price">
-        <p>S/. ${product.newPrice}</p>
-        <a class="">ver producto</a>
-      </div>
+      <a href="#product/${dataObj[i].id.split('-').join('')}/${dataObj[i].name.split(' ').join('')}" class="content-image">
+        <div class="content-product__name">${product.name} : ${product.unit}${product.extent}</div>
+        <div class="content-product__img">
+          <img src="${product.image.url_01}">
+        </div>
+        <div class="content-product__price">
+          <p>S/. ${product.newPrice}</p>
+          <a class="">ver producto</a>
+        </div>
+      </a>
       `
       containerProductSub.appendChild(article)
     }
-
   }
   addProduct(){}
   deleteProduct(){}
+}
+
+function offer(product,sectionOffer){
+  if(product.price !== ""){
+    let offerProduct = (100*(product.price-product.newPrice))/product.newPrice
+    return `
+      <div class="data-offer_contend">
+        <p class="percent-offer">off ${offerProduct.toFixed(2)}%</p>
+        <p class="offer-data">
+          <span>s/${product.price}</span>
+        </p>
+      </div>
+    `
+  }
 }
 const product = new Product(URL_DATA).operate()
 

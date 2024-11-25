@@ -1,5 +1,5 @@
 .main-product {
-  padding-top: 30px;
+  padding-top: 15px;
   display: flex;
   gap: 40px;
   flex-direction: column;
@@ -11,7 +11,39 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 10px;
+      .data-offer_contend{
+        display: flex;
+        align-items: center;
+        .percent-offer{
+          font-size: 18px;
+          border-radius: 5px;
+          font-weight: 600;
+          padding: 5px 8px;
+          position: absolute;
+          left: 200px;
+          color: white;
+          background-color: red;
+        }
+        .offer-data{
+          letter-spacing: 3px;
+          font-size: 22px;
+          font-weight: 600;
+          position: relative;
+          color: red;
+          ::after{
+            content: "";
+            background-color: red;
+            width: 3px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(75deg);
+            bottom: -50%;
+            left: 50%;
+            transform: translate(-50% 50%);
+          }
+        }
+      }
       .send{
         width: 100%;
         p{
@@ -32,19 +64,21 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        .product-name{
+          font-size: 18px;
+        }
         .weight{
           font-size: 18px;
           font-weight: 600;
         }
       }
       .product-image{
-        width: 300px;
+        height: 250px;
         border-radius: 10px;
         overflow: hidden;
         background-color: white;
         img{
-          max-width: 100%;
-          max-height: 100%;
+          height: 100%;
         }
       }
       .rate-brand{
@@ -61,7 +95,7 @@
           font-weight: 600;
         }
         .prise{
-          font-size: 38px;
+          font-size: 32px;
           font-weight: 800;
         }
         .brand{
