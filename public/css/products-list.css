@@ -756,7 +756,7 @@ footer .banner-developer a span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 100%;
+  width: 100%;
 }
 .main-list__product .content-products__items .content-article .content-image .product-img_right {
   height: 100%;

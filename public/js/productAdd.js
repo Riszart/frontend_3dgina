@@ -185,7 +185,7 @@ function sendOrder(order){
   document.getElementById('nameUser')
   const customerName = `${nameUser.value}`
   const orderDetails = order
-  const phoneNumber = "51936809672"
+  const phoneNumber = "51923232870"
   const orderMessage = `Hola, soy ${customerName}. Quisiera hacer el siguiente pedido:\n\n${orderDetails}`
   const encodedMessage = encodeURIComponent(orderMessage)
   const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`

@@ -4,7 +4,6 @@ window.addEventListener('hashchange',products)
 function products(){
   let hash = window.location.hash.substring(1)
   let hashName = hash.split('/')[0]
-  console.log(hashName)
   if(hashName.split('-')[0] == 'product')goIdProduct(hash)
   else if(hashName.split('-')[0] == 'category')goCategory(hash)
   // else if(hashName.split('-')[0] == 'brand')goCategory(hash)
@@ -28,4 +27,25 @@ function operateUrl(){
   let url = location.href.split('#')[0].split('/')
   url.pop()
   return url.join('/')
+}
+
+async function returnPage(value){
+  const response = await fetch("https://raw.githubusercontent.com/Riszart/backend_3dgina/main/data.json")
+  const data = await response.json()
+  let a = Object.values(data[0]).find((element)=>{
+    return element.id == value
+  })
+  window.location.hash = `#${a.nameE.split('/')[0]}/${value}/${a.nameE.split('/')[1]}`
+}
+
+if(window.location.pathname == '/public/html/products-list.html'){
+  let data1 = [window.location.hash.split('/')[1].split('')[0],window.location.hash.split('/')[1].split('')[1],window.location.hash.split('/')[1].split('')[2]]
+  returnPage(data1.join(''))
+}
+
+if(window.location.pathname == '/public/html/index.html'){
+  if(window.location.hash.split('/')[0] == "#category"){
+    console.log(window.location)
+    window.location = 'http://127.0.0.1:5501/public/html/index.html'
+  }
 }

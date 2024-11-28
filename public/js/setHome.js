@@ -152,7 +152,6 @@ function validatePrice(element,offerElement){
   </div>
   `
   offerElement.style.display = "flex"
-  console.log(offer,offerElement)
   return `s/. <span>${element.price}</span>`
 } 
 async function getBrand(){

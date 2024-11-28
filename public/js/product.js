@@ -158,3 +158,7 @@ function getIndexRandom(maxNumber){
   let number = Math.trunc(Math.random()*maxNumber)
   return number
 }
+
+//http://127.0.0.1:5501/public/html/product.html#product/110951001/encendedordegas
+//http://127.0.0.1:5501/public/html/products-list.html#product/110951001/encendedordegas
+//http://127.0.0.1:5501/public/html/products-list.html#category/110/market
