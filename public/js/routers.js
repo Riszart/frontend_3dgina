@@ -49,17 +49,16 @@ if(window.location.pathname == '/public/html/products-list.html'){
 }
 console.log('init',window.location)
 
-
-window.addEventListener('hashchange',()=>{
-  console.log('hashchange')
+window.addEventListener('DOMContentLoaded',()=>{
+  if(window.location.pathname == '/public/html/index.html'){
+    console.log('location')
+    document.querySelector('main').style.background = '#000'
+    history.back()
+    // if(window.location.hash.split('/')[0] == "#category"){
+    //   console.log(window.location,'ss')
+      
+  
+    //   // window.location = 'http://127.0.0.1:5501/public/html/index.html'
+    // }
+  }
 })
-
-if(window.location.pathname == '/public/html/index.html'){
-  history.back()
-  // if(window.location.hash.split('/')[0] == "#category"){
-  //   console.log(window.location,'ss')
-    
-
-  //   // window.location = 'http://127.0.0.1:5501/public/html/index.html'
-  // }
-}
