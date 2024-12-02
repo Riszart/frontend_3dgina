@@ -29,7 +29,12 @@ function operateUrl(){
   return url.join('/')
 }
 
+//-----------------------------------
+
 async function returnPage(value){
+  window.addEventListener('hashchange',()=>{
+
+  })
   const response = await fetch("https://raw.githubusercontent.com/Riszart/backend_3dgina/main/data.json")
   const data = await response.json()
   let a = Object.values(data[0]).find((element)=>{
@@ -42,10 +47,19 @@ if(window.location.pathname == '/public/html/products-list.html'){
   let data1 = [window.location.hash.split('/')[1].split('')[0],window.location.hash.split('/')[1].split('')[1],window.location.hash.split('/')[1].split('')[2]]
   returnPage(data1.join(''))
 }
+console.log('init',window.location)
+
+
+window.addEventListener('hashchange',()=>{
+  console.log('hashchange')
+})
 
 if(window.location.pathname == '/public/html/index.html'){
-  if(window.location.hash.split('/')[0] == "#category"){
-    console.log(window.location)
-    window.location = 'http://127.0.0.1:5501/public/html/index.html'
-  }
+  history.back()
+  // if(window.location.hash.split('/')[0] == "#category"){
+  //   console.log(window.location,'ss')
+    
+
+  //   // window.location = 'http://127.0.0.1:5501/public/html/index.html'
+  // }
 }
