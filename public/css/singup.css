@@ -873,6 +873,15 @@ footer .banner-developer a span {
   height: 100%;
   border-radius: 5px;
 }
+.content-categories .contentd-category__items .item-category:active {
+  outline: #d4af37 2px solid;
+  box-shadow: 0px 0px 16px inset #d4af37;
+  background-color: white;
+}
+.content-categories .contentd-category__items .item-category:active p {
+  background-color: white;
+  box-shadow: 0px 0px 20px inset #4a4a4a;
+}
 .content-categories .contentd-category__items .item-category p {
   display: block;
   position: absolute;

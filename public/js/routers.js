@@ -48,12 +48,14 @@ if(window.location.pathname == '/public/html/products-list.html'){
   returnPage(data1.join(''))
 }
 console.log('init',window.location)
+// document.querySelector('main').style.background = '#0f5'
 
 window.addEventListener('DOMContentLoaded',()=>{
+  // document.querySelector('main').style.background = '#ff5'
   if(window.location.pathname == '/public/html/index.html'){
     console.log('location')
-    document.querySelector('main').style.background = '#000'
-    history.back()
+    // document.querySelector('main').style.background = '#000'
+    // history.back()
     // if(window.location.hash.split('/')[0] == "#category"){
     //   console.log(window.location,'ss')
       
