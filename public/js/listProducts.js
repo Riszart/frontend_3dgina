@@ -62,13 +62,12 @@ class Products{
         const offerArticle = document.createElement('article')
         offerArticle.classList.add('offer-product')
         a.classList.add("content-article")
-        // a.href = `#product/${element.id.split('-').join('')}/${element.name.split(' ').join('')}`
         a.innerHTML = `
           <div class="content-title__product">
             <p class="product-name">${element.name}</p>
             <p class="product-name">${element.unit}${element.extent}</p>
           </div>
-          <a href="#product/${element.id.split('-').join('')}/${element.name.split(' ').join('')}" class="content-image">
+          <a href="product.html#product/${element.id.split('-').join('')}/${element.name.split(' ').join('')}" class="content-image">
             <div class="product-img_left">
               <img src="${element.image.url_01}" class="product-image">
             </div>
