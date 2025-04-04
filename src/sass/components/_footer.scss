@@ -13,15 +13,8 @@ footer{
     align-items: center;
     gap: 15px;
     .content-logo{
-      height: 50px;
-      width: 150px;
-      margin: 15px 0;
-      background-color: $dark-green;
-      border-radius: 100%;
       img{
-        display: block;
-        height: 100%;
-        margin: auto;
+        width: 150px;
       }
     }
     .network{
@@ -58,12 +51,13 @@ footer{
     gap: 10px;
     width: 100vw;
     margin-bottom: 30px;
-    background-color: rgb(53, 53, 53);
+    background-color: $soft-gold;
     position: absolute;
     left: 0;
     bottom: 5px;
     padding: 20px 0 15px 15px;
     p{
+      color: black;
       font-size: 14px;
       text-align: left;
     }
@@ -76,14 +70,14 @@ footer{
     height: 30px;
     left: 0;
     bottom: 0;
-    color: aliceblue;
     background-color: black;
     text-transform: capitalize;
     a {
-      font-size: 14px;
+      font-size: 18px;
       padding-top: 4px;
       display: flex;
       place-content: center;
+      color: $soft-gold;
       span{
         margin-left: 10px;
         text-transform: lowercase;

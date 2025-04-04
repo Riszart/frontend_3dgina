@@ -1,17 +1,36 @@
+
 .cart-float{
   display: none;
   position: fixed;
+  border: solid black 1px;
   top: 70px;
-  padding: 5px;
   right: 0;
   width: 50vw;
   z-index: 1000;
-  background-color: $soft-gold;
+  background: linear-gradient(#FF8746,#FFD54F);
   border-radius: 8px;
+  .title-float{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+  }
   .cart-top{
     display: flex;
-    gap: 5px;
-    align-items: center;
+    border: solid black 1px;
+    padding: 8px;
+    gap: 10px;
+    .cart-bottom{
+      p{
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+
     img{
       width: 56px;
       height: 56px;

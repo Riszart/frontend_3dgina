@@ -165,29 +165,40 @@
   }
 
   .banner-pay{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 0 25px;
-    margin-bottom: 10px;
-    padding-top: 10px;
-    p{
-      display: flex;
-      place-content: center;
-      text-align: center;
-      padding: 15px;
-      font-size: 18px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 800;
-      border-radius: 5px;
-      color: white;
-    }  
-    p:nth-child(1){
+    display: flex;
+    width: 100%;
+    height: 50px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // gap: 10px;
+    // padding: 0 25px;
+    // margin-bottom: 10px;
+    // padding-top: 10px;
+    // p{
+    //   display: flex;
+    //   place-content: center;
+    //   text-align: center;
+    //   padding: 15px;
+    //   font-size: 18px;
+    //   text-transform: uppercase;
+    //   letter-spacing: 3px;
+    //   font-weight: 800;
+    //   border-radius: 5px;
+    //   color: white;
+    // }
+    div:nth-child(1){
       background-color: #782988;
+      width: 50%;
+      height: 0px;
+      border-right: 50px solid #00a3ea;
+      border-top: 50px solid transparent;
     }
-    p:nth-child(2){
+    div:nth-child(2){
       background-color: #00a3ea;
+      width: 50%;
+    }
+    div{
+      text-align: center;
     }
   }
 }
@@ -224,12 +235,14 @@
       position: relative;
       flex: none;
       display: flex;
-      gap: 10px;
+      gap: 5px;
       flex-direction: column;
       align-items: center;
       width: 220px;
       background-color: white;
       padding: 10px;
+      box-shadow: $box-shadow-primary;
+      border-radius: 5px;
       .contend-title{
         height: 70px;
         box-sizing: border-box;
@@ -306,11 +319,9 @@
           align-items: center;
           padding: 5px;
           width: 100%;
-          background-color: $soft-cream;
           .product-new_price{
-            color: $dark-green;
             font-weight: 600;
-            font-size: 22px;
+            font-size: 26px;
           }
           .product-old_price{
             letter-spacing: 2px;
@@ -339,16 +350,17 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: $dark-green;
+          background-color: $orange-main;
+          box-shadow: $box-shadow-primary;
           &:active{
             background-color: $soft-gold;
           }
           p{
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 16px;
-            font-weight: 700;
-            color: white;
+            font-size: 20px;
+            font-weight: 800;
+            color: black;
           }
         }
         p{
@@ -388,12 +400,14 @@
 }
 .content-categories{
   .content-categories__h2{
+    background-color: $orange-main;
     text-transform: capitalize;
     text-align: center;
-    margin: 20px 0;
+    padding: 10px 0;
+    color: white;
   }
   .contentd-category__items{
-    margin: 50px 0;
+    margin: 10px 0;
     box-sizing: border-box;
     width: 100%;
     // height: 150px;
@@ -416,23 +430,25 @@
       width: 100%;
       height: 100%;
       border-radius: 5px;
+      background-color: white;
+      box-shadow: $box-shadow-secundary;
       &:active{
         outline: $soft-gold 2px solid;
         box-shadow: 0px 0px 16px inset $soft-gold;
         background-color: white;
-        p{
-          background-color: white;
-          box-shadow: 0px 0px 20px inset $dark-grey;
-        }
+        // p{
+        //   background-color: white;
+        //   box-shadow: 0px 0px 20px inset $dark-grey;
+        // }
       }
       p{
         display: block;
         position: absolute;
-        bottom: -25px;
+        bottom: -28px;
         text-transform: capitalize;
-        font-size: 16px;
-        font-weight: 800;
-        color: $dark-green;
+        font-size: 20px;
+        font-weight: 600;
+        color: $orange-main;
         width: 100%;
         text-align: center;
       }
@@ -469,10 +485,13 @@
   }
 }
 .style-title__section-p{
+  margin-top: 35px;
   width: 100%;
   padding: 10px 0;
   font-size: 22px;
-  margin-left: 15px;
   text-transform: capitalize;
   font-weight: 500;
-}    
+  text-align: center;
+  background-color: $orange-main;
+  color: white;
+}
